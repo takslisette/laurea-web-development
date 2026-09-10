@@ -18,3 +18,8 @@ if (userAge >= 18) {
 } else {
     alert("You are a minor!");
 }
+
+function greetUser(name) {
+    console.log("Hello " + name + "!");
+}
+greetUser(userName);

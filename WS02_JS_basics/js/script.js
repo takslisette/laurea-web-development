@@ -5,3 +5,4 @@ let favoriteAnimal = "dog";
 console.log(name);
 console.log(age);
 console.log(favoriteAnimal);
+let userName = prompt("What is your name?");

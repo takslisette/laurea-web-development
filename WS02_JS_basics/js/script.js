@@ -22,4 +22,5 @@ if (userAge >= 18) {
 function greetUser(name) {
     console.log("Hello " + name + "!");
 }
+
 greetUser(userName);

@@ -59,11 +59,15 @@ feedback.addEventListener("input", function() {
 });
 const feedbackForm = document.querySelector("#feedbackForm");
 
-
 feedbackForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    if (feedback.value.length < 10) {
-        status.innerHTML = "Palaute on liian lyhyt.";
+    if (feedback.value.length < 10 || feedback.value.length > 200) {
+        status.innerHTML = "Palaute pitää olla 10–200 merkkiä.";
+    } else {
+        status.innerHTML = "Thank you for your feedback!";
+        feedback.value = "";
+        preview.innerHTML = "";
+        charcount.innerHTML = "0/200";
     }
 });

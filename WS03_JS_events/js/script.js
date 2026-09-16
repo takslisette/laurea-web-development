@@ -89,3 +89,14 @@ document.addEventListener("keydown", function(event) {
     document.querySelector("#keycount").innerHTML =
         "Näppäimiä painettu: " + keyCount;
 });
+
+const locationBtn = document.querySelector("#locationBtn");
+const locationDiv = document.querySelector("#location");
+
+locationBtn.addEventListener("click", function() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        locationDiv.innerHTML =
+            "Leveysaste: " + position.coords.latitude +
+            "<br>Pituusaste: " + position.coords.longitude;
+    });
+});

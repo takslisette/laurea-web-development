@@ -51,6 +51,9 @@ feedback.addEventListener("blur", function() {
 
 const charcount = document.querySelector("#charcount");
 
+const preview = document.querySelector("#preview");
+
 feedback.addEventListener("input", function() {
     charcount.innerHTML = feedback.value.length + "/200";
+    preview.innerHTML = feedback.value;
 });

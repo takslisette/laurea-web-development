@@ -48,3 +48,9 @@ feedback.addEventListener("focus", function() {
 feedback.addEventListener("blur", function() {
     status.innerHTML = "";
 });
+
+const charcount = document.querySelector("#charcount");
+
+feedback.addEventListener("input", function() {
+    charcount.innerHTML = feedback.value.length + "/200";
+});

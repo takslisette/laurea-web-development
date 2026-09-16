@@ -40,24 +40,26 @@ exercise1.addEventListener("click", function() {
 
 const feedback = document.querySelector("#feedback");
 const status = document.querySelector("#status");
+const charcount = document.querySelector("#charcount");
+const preview = document.querySelector("#preview");
+const feedbackForm = document.querySelector("#feedbackForm");
+
 
 feedback.addEventListener("focus", function() {
     status.innerHTML = "Kirjoita palautteesi tähän.";
 });
 
+
 feedback.addEventListener("blur", function() {
     status.innerHTML = "";
 });
 
-const charcount = document.querySelector("#charcount");
-
-const preview = document.querySelector("#preview");
 
 feedback.addEventListener("input", function() {
     charcount.innerHTML = feedback.value.length + "/200";
     preview.innerHTML = feedback.value;
 });
-const feedbackForm = document.querySelector("#feedbackForm");
+
 
 feedbackForm.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -72,23 +74,25 @@ feedbackForm.addEventListener("submit", function(event) {
     }
 });
 
-document.addEventListener("keydown", function(event) {
-    document.querySelector("#keyinfo").innerHTML =
-        "Näppäin: " + event.key +
-        " | Koodi: " + event.code +
-        " | Shift: " + event.shiftKey +
-        " | Ctrl: " + event.ctrlKey +
-        " | Alt: " + event.altKey;
-});
 
 let keyCount = 0;
 
 document.addEventListener("keydown", function(event) {
     keyCount++;
 
+    document.querySelector("#keyinfo").innerHTML =
+        "Näppäin: " + event.key +
+        " | Koodi: " + event.code +
+        " | Shift: " + event.shiftKey +
+        " | Ctrl: " + event.ctrlKey +
+        " | Alt: " + event.altKey;
+
+    document.querySelector("#keybox").innerHTML = event.key;
+
     document.querySelector("#keycount").innerHTML =
         "Näppäimiä painettu: " + keyCount;
 });
+
 
 const locationBtn = document.querySelector("#locationBtn");
 const locationDiv = document.querySelector("#location");

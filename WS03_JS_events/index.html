@@ -13,20 +13,56 @@
 
     <hr>
 
-<h2>Harjoitus 1: Klikkaus</h2>
-<hr>
+   harjotus 1
+    <h2>Harjoitus 1: Klikkaus</h2>
 
-<h2>Harjoitus 2: Kuuntelijat ja DOM</h2>
-<p>Alla on kaksi painiketta. Lisää niihin onclick-tapahtumat.</p>
+    <p>Alla on kaksi painiketta. Lisää niihin onclick-tapahtumat.</p>
 
-<p>Harjoituksessa 2 opit addEventListener():n. Se on parempi tapa kuin kirjoittaminen suoraan HTML:ään.</p>
+    <p>Harjoituksessa 2 opit addEventListener():n. Se on parempi tapa kuin kirjoittaminen suoraan HTML:ään.</p>
 
-<p>
-    <button onclick="alert('You clicked me!')">Paina minua</button>
-    <button onclick="showTable()">Näytä eläintaulukko</button>
-</p>
-<div id="tableContainer"></div>
+    <p>
+        <button onclick="alert('You clicked me!')">Paina minua</button>
+        <button onclick="showTable()">Näytä eläintaulukko</button>
+    </p>
 
+    <div id="tableContainer"></div>
+
+    <hr>
+
+harjotus 2
+    <h2>Harjoitus 2: Kuuntelijat ja DOM</h2>
+
+    <hr>
+
+    harjotus 3
+    <h2>Harjoitus 3: Syöttötapahtumat</h2>
+
+    <h3>Pika-palautelomake</h3>
+
+    <form id="feedbackForm" novalidate>
+
+        <label for="feedback">Palaute:</label><br>
+
+        <textarea
+            id="feedback"
+            placeholder="Kirjoita palautteesi..."
+            rows="5"
+        ></textarea><br>
+
+        <div>
+            <span id="charcount">0/200</span>
+            <span id="status"></span>
+        </div>
+
+        <button id="sendBtn" type="submit">Lähetä</button>
+
+    </form>
+
+    <h3>Esikatselu</h3>
+
+    <div id="preview">
+        (Esikatselu tulee tähän)
+    </div>
 
 </body>
 </html>

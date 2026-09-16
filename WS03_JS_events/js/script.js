@@ -25,3 +25,4 @@ const exercise2 = document.querySelector("h2:nth-of-type(2)");
 exercise2.addEventListener("mouseover", function() {
     console.log("Stepped over me with a mouse!");
 });
+const exercise1 = document.querySelector("h2:nth-of-type(1)");

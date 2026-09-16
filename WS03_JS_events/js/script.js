@@ -74,9 +74,11 @@ feedbackForm.addEventListener("submit", function(event) {
 
 document.addEventListener("keydown", function(event) {
     document.querySelector("#keyinfo").innerHTML =
-        "Näppäin: " + event.key + " | Koodi: " + event.code;
-
-    document.querySelector("#keybox").innerHTML = event.key;
+        "Näppäin: " + event.key +
+        " | Koodi: " + event.code +
+        " | Shift: " + event.shiftKey +
+        " | Ctrl: " + event.ctrlKey +
+        " | Alt: " + event.altKey;
 });
 
 let keyCount = 0;

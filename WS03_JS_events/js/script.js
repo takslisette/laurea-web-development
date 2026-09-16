@@ -17,23 +17,29 @@ function showTable() {
             </tr>
         </table>
     `;
+
     const container = document.querySelector("#tableContainer");
-container.innerHTML = table;
+    container.innerHTML = table;
 }
+
+
 const exercise2 = document.querySelector("h2:nth-of-type(2)");
 
 exercise2.addEventListener("mouseover", function() {
     console.log("Stepped over me with a mouse!");
 });
+
+
 const exercise1 = document.querySelector("h2:nth-of-type(1)");
+
 exercise1.addEventListener("click", function() {
     exercise1.style.color = "red";
     exercise1.innerHTML = "Bye bye mouse!";
 });
 
+
 const feedback = document.querySelector("#feedback");
 const status = document.querySelector("#status");
-
 
 feedback.addEventListener("focus", function() {
     status.innerHTML = "Kirjoita palautteesi tähän.";

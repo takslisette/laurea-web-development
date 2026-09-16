@@ -17,4 +17,6 @@ function showTable() {
             </tr>
         </table>
     `;
+    const container = document.querySelector("#tableContainer");
+container.innerHTML = table;
 }

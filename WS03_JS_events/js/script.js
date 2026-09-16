@@ -78,3 +78,12 @@ document.addEventListener("keydown", function(event) {
 
     document.querySelector("#keybox").innerHTML = event.key;
 });
+
+let keyCount = 0;
+
+document.addEventListener("keydown", function(event) {
+    keyCount++;
+
+    document.querySelector("#keycount").innerHTML =
+        "Näppäimiä painettu: " + keyCount;
+});

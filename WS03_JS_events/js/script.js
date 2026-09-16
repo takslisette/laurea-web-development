@@ -95,8 +95,14 @@ const locationDiv = document.querySelector("#location");
 
 locationBtn.addEventListener("click", function() {
     navigator.geolocation.getCurrentPosition(function(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
         locationDiv.innerHTML =
-            "Leveysaste: " + position.coords.latitude +
-            "<br>Pituusaste: " + position.coords.longitude;
+            "Leveysaste: " + latitude +
+            "<br>Pituusaste: " + longitude +
+            "<br><a href=\"https://www.google.com/maps?q=" +
+            latitude + "," + longitude +
+            "\" target=\"_blank\">Avaa Google Mapsissa</a>";
     });
 });

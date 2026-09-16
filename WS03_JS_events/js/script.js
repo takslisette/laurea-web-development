@@ -20,3 +20,4 @@ function showTable() {
     const container = document.querySelector("#tableContainer");
 container.innerHTML = table;
 }
+const exercise2 = document.querySelector("h2:nth-of-type(2)");

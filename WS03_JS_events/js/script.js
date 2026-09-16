@@ -26,3 +26,7 @@ exercise2.addEventListener("mouseover", function() {
     console.log("Stepped over me with a mouse!");
 });
 const exercise1 = document.querySelector("h2:nth-of-type(1)");
+exercise1.addEventListener("click", function() {
+    exercise1.style.color = "red";
+    exercise1.innerHTML = "Bye bye mouse!";
+});

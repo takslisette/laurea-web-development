@@ -44,3 +44,7 @@ const status = document.querySelector("#status");
 feedback.addEventListener("focus", function() {
     status.innerHTML = "Kirjoita palautteesi tähän.";
 });
+
+feedback.addEventListener("blur", function() {
+    status.innerHTML = "";
+});

@@ -75,4 +75,6 @@ feedbackForm.addEventListener("submit", function(event) {
 document.addEventListener("keydown", function(event) {
     document.querySelector("#keyinfo").innerHTML =
         "Näppäin: " + event.key + " | Koodi: " + event.code;
+
+    document.querySelector("#keybox").innerHTML = event.key;
 });

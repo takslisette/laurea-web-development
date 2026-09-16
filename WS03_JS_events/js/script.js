@@ -71,3 +71,7 @@ feedbackForm.addEventListener("submit", function(event) {
         charcount.innerHTML = "0/200";
     }
 });
+
+document.addEventListener("keydown", function(event) {
+    console.log(event);
+});

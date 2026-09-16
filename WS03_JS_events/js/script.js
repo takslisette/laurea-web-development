@@ -57,3 +57,13 @@ feedback.addEventListener("input", function() {
     charcount.innerHTML = feedback.value.length + "/200";
     preview.innerHTML = feedback.value;
 });
+const feedbackForm = document.querySelector("#feedbackForm");
+
+
+feedbackForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    if (feedback.value.length < 10) {
+        status.innerHTML = "Palaute on liian lyhyt.";
+    }
+});

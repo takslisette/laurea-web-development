@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Workshop 04 – Eläimet ja DOM</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1 id="mainHeading">Workshop 04 – Eläimet ja DOM</h1>
+
+        <p>
+            Tässä työpajassa harjoittelet HTML-elementtien valitsemista,
+            tapahtumien kuuntelemista ja DOM-rakenteen muuttamista.
+        </p>
+
+        <p>
+            <strong>Valitse → Kuuntele → Muuta DOMia</strong>
+        </p>
+    </header>
+
+    <main>
+
+        <!-- TEHTÄVÄ 1 -->
+        <section>
+            <h2 id="taskOneHeading">Tehtävä 1: Sisällön muuttaminen</h2>
+
+            <p>
+                Lisää painikkeisiin tapahtumankuuntelijat JavaScriptissä.
+                Käytä elementtien valitsemiseen
+                <code>document.querySelector()</code>-metodia.
+            </p>
+
+            <div class="buttons">
+                <button id="changeHeadingButton">
+                    Muuta otsikko
+                </button>
+
+                <button id="changeStyleButton">
+                    Muuta tyyliä
+                </button>
+
+                <button id="changeTextButton">
+                    Muuta eläinteksti
+                </button>
+            </div>
+
+            <p id="animalText">
+                Elefantit ovat maailman suurimpia maaeläimiä.
+            </p>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

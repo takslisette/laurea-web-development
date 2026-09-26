@@ -15,3 +15,8 @@ const changeTextButton = document.querySelector("#changeTextButton");
 
 const taskOneHeading = document.querySelector("#taskOneHeading");
 const animalText = document.querySelector("#animalText");
+
+changeHeadingButton.addEventListener("click", function () {
+    taskOneHeading.textContent = "Muokattu otsikko!";
+});
+

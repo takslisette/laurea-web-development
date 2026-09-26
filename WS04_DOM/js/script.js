@@ -24,3 +24,23 @@ changeTextButton.addEventListener("click", function () {
     animalText.textContent = "Tiikerit ovat suuria petoeläimiä.";
 
 });
+
+const animalContent = document.querySelector("#animalContent");
+
+const animalHeading = document.createElement("h3");
+animalHeading.textContent = "Päivän eläin";
+animalHeading.classList.add("animal-heading");
+
+const animalParagraph = document.createElement("p");
+animalParagraph.textContent = "Pingviinit ovat lentokyvyttömiä lintuja, jotka elävät pääasiassa eteläisellä pallonpuoliskolla.";
+
+const animalImage = document.createElement("img");
+animalImage.src = "images/penguin.png";
+animalImage.alt = "Pingviini";
+
+animalContent.append(
+    animalHeading,
+    animalParagraph,
+    animalImage
+);
+

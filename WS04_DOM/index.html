@@ -1,64 +1,58 @@
-<!DOCTYPE html>
-<html lang="fi">
+<!-- TEHTÄVÄ 2 -->
+<section>
+    <h2>Tehtävä 2: Elementtien luominen JavaScriptillä</h2>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <p>
+        Luo tämän tehtävän elementit JavaScriptillä. Älä lisää niitä
+        suoraan HTML-koodiin.
+    </p>
 
-    <title>Workshop 04 – Eläimet ja DOM</title>
+    <ol>
+        <li>
+            Valitse alla oleva elementti, jonka tunniste on
+            <code>animalContent</code>.
+        </li>
 
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" defer></script>
-</head>
+        <li>
+            Luo <code>h3</code>-elementti, jossa lukee
+            <strong>Päivän eläin</strong>.
+        </li>
 
-<body>
+        <li>
+            Luo tekstikappale, jossa kerrotaan valitsemastasi eläimestä.
+        </li>
 
-    <header>
-        <h1 id="mainHeading">Workshop 04 – Eläimet ja DOM</h1>
+        <li>
+            Luo <code>img</code>-elementti ja määritä sille
+            <code>src</code>- ja <code>alt</code>-arvot.
+        </li>
 
-        <p>
-            Tässä työpajassa harjoittelet HTML-elementtien valitsemista,
-            tapahtumien kuuntelemista ja DOM-rakenteen muuttamista.
-        </p>
+        <li>
+            Liitä luomasi elementit sivulle
+            <code>append()</code>-metodilla.
+        </li>
 
-        <p>
-            <strong>Valitse → Kuuntele → Muuta DOMia</strong>
-        </p>
-    </header>
+        <li>
+            Lisää luodulle otsikolle CSS-luokka
+            <code>animal-heading</code>.
+        </li>
+    </ol>
 
-    <main>
+    <div id="animalContent"></div>
 
-        <!-- TEHTÄVÄ 1 -->
-        <section>
-            <h2 id="taskOneHeading">Tehtävä 1: Sisällön muuttaminen</h2>
+    <div class="buttons">
+        <button id="hideAnimalButton">
+            Piilota eläin
+        </button>
 
-            <p>
-                Lisää painikkeisiin tapahtumankuuntelijat JavaScriptissä.
-                Käytä elementtien valitsemiseen
-                <code>document.querySelector()</code>-metodia.
-            </p>
+        <button id="showAnimalButton">
+            Näytä eläin
+        </button>
+    </div>
 
-            <div class="buttons">
-                <button id="changeHeadingButton">
-                    Muuta otsikko
-                </button>
-
-                <button id="changeStyleButton">
-                    Muuta tyyliä
-                </button>
-
-                <button id="changeTextButton">
-                    Muuta eläinteksti
-                </button>
-            </div>
-
-            <p id="animalText">
-                Elefantit ovat maailman suurimpia maaeläimiä.
-            </p>
-        </section>
-
-    </main>
-
-</body>
-
-</html>
+    <p>
+        Lisää painikkeisiin tapahtumankuuntelijat. Ensimmäinen painike
+        piilottaa <code>animalContent</code>-elementin ja toinen näyttää
+        sen uudelleen.
+    </p>
+</section>

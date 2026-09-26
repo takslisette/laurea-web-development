@@ -8,3 +8,9 @@ const animalText = document.querySelector("#animalText");
 changeHeadingButton.addEventListener("click", function () {
     taskOneHeading.textContent = "Muokattu otsikko!";
 });
+
+changeStyleButton.addEventListener("click", function () {
+
+    taskOneHeading.classList.toggle("highlight");
+
+});

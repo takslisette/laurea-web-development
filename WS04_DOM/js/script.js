@@ -61,7 +61,6 @@ animalContent.append(
 );
 
 
-// TEHTÄVÄ 2 – PAINIKKEET
 
 const hideAnimalButton = document.querySelector("#hideAnimalButton");
 

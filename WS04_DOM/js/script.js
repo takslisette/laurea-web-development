@@ -19,3 +19,8 @@ changeStyleButton.addEventListener("click", function () {
     taskOneHeading.classList.toggle("highlight");
 
 });
+changeTextButton.addEventListener("click", function () {
+
+    animalText.textContent = "Tiikerit ovat suuria petoeläimiä.";
+
+});

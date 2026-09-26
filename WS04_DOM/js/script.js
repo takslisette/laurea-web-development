@@ -44,3 +44,17 @@ animalContent.append(
     animalImage
 );
 
+const hideAnimalButton = document.querySelector("#hideAnimalButton");
+const showAnimalButton = document.querySelector("#showAnimalButton");
+
+hideAnimalButton.addEventListener("click", function () {
+
+    animalContent.style.display = "none";
+
+});
+
+showAnimalButton.addEventListener("click", function () {
+
+    animalContent.style.display = "block";
+
+});

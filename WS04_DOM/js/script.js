@@ -47,23 +47,45 @@ animalButton.addEventListener("click", function () {
 });
 
 
+// Vaihda koko sivun taustaväri
+
+const backgroundButton =
+    document.querySelector("#backgroundButton");
+
+backgroundButton.addEventListener("click", function () {
+    document.body.classList.toggle("dark-background");
+});
+
+
 // =========================
 // TASK 2
 // =========================
 
-const animalContent = document.querySelector("#animalContent");
+const animalContent =
+    document.querySelector("#animalContent");
 
-const animalHeading = document.createElement("h3");
+const animalHeading =
+    document.createElement("h3");
+
 animalHeading.textContent = "Päivän eläin";
+
 animalHeading.classList.add("animal-heading");
 
-const animalParagraph = document.createElement("p");
+
+const animalParagraph =
+    document.createElement("p");
+
 animalParagraph.textContent =
     "Tämän päivän eläin on elefantti. Elefantti on maailman suurin maaeläin.";
 
-const animalImage = document.createElement("img");
+
+const animalImage =
+    document.createElement("img");
+
 animalImage.src = "images/elephant.png";
+
 animalImage.alt = "Elefantti";
+
 
 animalContent.append(
     animalHeading,
@@ -74,7 +96,8 @@ animalContent.append(
 
 // Piilota eläin
 
-const hideAnimalButton = document.querySelector("#hideAnimalButton");
+const hideAnimalButton =
+    document.querySelector("#hideAnimalButton");
 
 hideAnimalButton.addEventListener("click", function () {
     animalContent.classList.add("hidden");
@@ -83,7 +106,8 @@ hideAnimalButton.addEventListener("click", function () {
 
 // Näytä eläin
 
-const showAnimalButton = document.querySelector("#showAnimalButton");
+const showAnimalButton =
+    document.querySelector("#showAnimalButton");
 
 showAnimalButton.addEventListener("click", function () {
     animalContent.classList.remove("hidden");
@@ -94,16 +118,21 @@ showAnimalButton.addEventListener("click", function () {
 // TASK 3
 // =========================
 
-const animalSelect = document.querySelector("#animalSelect");
+const animalSelect =
+    document.querySelector("#animalSelect");
 
-const animalName = document.querySelector("#animalName");
+const animalName =
+    document.querySelector("#animalName");
 
-const animalImageElement = document.querySelector("#animalImage");
+const animalImageElement =
+    document.querySelector("#animalImage");
 
-const animalDescription = document.querySelector("#animalDescription");
+const animalDescription =
+    document.querySelector("#animalDescription");
 
 
 const animals = {
+
     elephant: {
         name: "Elefantti",
         image: "images/elephant.png",
@@ -135,13 +164,18 @@ const animals = {
 
 
 animalSelect.addEventListener("change", function () {
-    const selectedAnimal = animalSelect.value;
 
-    animalName.textContent = animals[selectedAnimal].name;
+    const selectedAnimal =
+        animalSelect.value;
 
-    animalImageElement.src = animals[selectedAnimal].image;
+    animalName.textContent =
+        animals[selectedAnimal].name;
 
-    animalImageElement.alt = animals[selectedAnimal].name;
+    animalImageElement.src =
+        animals[selectedAnimal].image;
+
+    animalImageElement.alt =
+        animals[selectedAnimal].name;
 
     animalDescription.textContent =
         animals[selectedAnimal].description;
@@ -150,20 +184,34 @@ animalSelect.addEventListener("change", function () {
 
 // Kuvan hover-efekti
 
-animalImageElement.addEventListener("mouseenter", function () {
-    animalImageElement.classList.add("image-highlight");
-});
+animalImageElement.addEventListener(
+    "mouseenter",
+    function () {
 
-animalImageElement.addEventListener("mouseleave", function () {
-    animalImageElement.classList.remove("image-highlight");
-});
+        animalImageElement.classList.add(
+            "image-highlight"
+        );
+    }
+);
+
+
+animalImageElement.addEventListener(
+    "mouseleave",
+    function () {
+
+        animalImageElement.classList.remove(
+            "image-highlight"
+        );
+    }
+);
 
 
 // =========================
 // TASK 4
 // =========================
 
-const animalForm = document.querySelector("#animalForm");
+const animalForm =
+    document.querySelector("#animalForm");
 
 const observationAnimal =
     document.querySelector("#observationAnimal");
@@ -178,54 +226,115 @@ const observationTableBody =
     document.querySelector("#observationTableBody");
 
 
-animalForm.addEventListener("submit", function (event) {
+animalForm.addEventListener(
+    "submit",
+    function (event) {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    const animal = observationAnimal.value.trim();
 
-    const location = observationLocation.value.trim();
+        const animal =
+            observationAnimal.value.trim();
 
-    const date = observationDate.value;
+        const location =
+            observationLocation.value.trim();
 
-    if (
-        animal === "" ||
-        location === "" ||
-        date === ""
-    ) {
-        alert("Täytä kaikki kentät.");
-        return;
+        const date =
+            observationDate.value;
+
+
+        if (
+            animal === "" ||
+            location === "" ||
+            date === ""
+        ) {
+            alert("Täytä kaikki kentät.");
+            return;
+        }
+
+
+        // Luo uusi rivi
+
+        const row =
+            document.createElement("tr");
+
+
+        // Eläin
+
+        const animalCell =
+            document.createElement("td");
+
+        animalCell.textContent =
+            animal;
+
+
+        // Havaintopaikka
+
+        const locationCell =
+            document.createElement("td");
+
+        locationCell.textContent =
+            location;
+
+
+        // Päivämäärä
+
+        const dateCell =
+            document.createElement("td");
+
+        dateCell.textContent =
+            date;
+
+
+        // Toiminto
+
+        const actionCell =
+            document.createElement("td");
+
+        const deleteButton =
+            document.createElement("button");
+
+        deleteButton.textContent = "Poista";
+
+        deleteButton.classList.add(
+            "delete-button"
+        );
+
+
+        deleteButton.addEventListener(
+            "click",
+            function () {
+
+                row.remove();
+
+            }
+        );
+
+
+        actionCell.append(deleteButton);
+
+
+        // Lisää kaikki solut riville
+
+        row.append(
+            animalCell,
+            locationCell,
+            dateCell,
+            actionCell
+        );
+
+
+        // Lisää rivi taulukkoon
+
+        observationTableBody.append(row);
+
+
+        // Tyhjennä lomake
+
+        animalForm.reset();
+
     }
-
-
-    const row = document.createElement("tr");
-
-
-    const animalCell = document.createElement("td");
-    animalCell.textContent = animal;
-
-
-    const locationCell = document.createElement("td");
-    locationCell.textContent = location;
-
-
-    const dateCell = document.createElement("td");
-    dateCell.textContent = date;
-
-
-    row.append(
-        animalCell,
-        locationCell,
-        dateCell
-    );
-
-
-    observationTableBody.append(row);
-
-
-    animalForm.reset();
-
-});
+);
 
 
 // =========================
@@ -233,20 +342,28 @@ animalForm.addEventListener("submit", function (event) {
 // =========================
 
 const deleteButtons =
-    document.querySelectorAll(".delete-button");
+    document.querySelectorAll(
+        ".delete-button"
+    );
 
 
-deleteButtons.forEach(function (button) {
+deleteButtons.forEach(
+    function (button) {
 
-    button.addEventListener("click", function () {
+        button.addEventListener(
+            "click",
+            function () {
 
-        const row = button.closest("tr");
+                const row =
+                    button.closest("tr");
 
-        row.remove();
+                row.remove();
 
-    });
+            }
+        );
 
-});
+    }
+);
 
 
 // =========================
@@ -254,18 +371,27 @@ deleteButtons.forEach(function (button) {
 // =========================
 
 const headerAnimalImage =
-    document.querySelector("#headerAnimalImage");
+    document.querySelector(
+        "#headerAnimalImage"
+    );
 
 
 const moveImageButton =
-    document.querySelector("#moveImageButton");
+    document.querySelector(
+        "#moveImageButton"
+    );
 
 
-moveImageButton.addEventListener("click", function () {
+moveImageButton.addEventListener(
+    "click",
+    function () {
 
-    headerAnimalImage.classList.toggle("move-image");
+        headerAnimalImage.classList.toggle(
+            "move-image"
+        );
 
-});
+    }
+);
 
 
 // =========================
@@ -273,18 +399,27 @@ moveImageButton.addEventListener("click", function () {
 // =========================
 
 const animateImageButton =
-    document.querySelector("#animateImageButton");
+    document.querySelector(
+        "#animateImageButton"
+    );
 
 
-animateImageButton.addEventListener("click", function () {
+animateImageButton.addEventListener(
+    "click",
+    function () {
 
-    headerAnimalImage.classList.remove("animate-image");
+        headerAnimalImage.classList.remove(
+            "animate-image"
+        );
 
-    void headerAnimalImage.offsetWidth;
+        void headerAnimalImage.offsetWidth;
 
-    headerAnimalImage.classList.add("animate-image");
+        headerAnimalImage.classList.add(
+            "animate-image"
+        );
 
-});
+    }
+);
 
 
 // =========================
@@ -292,14 +427,21 @@ animateImageButton.addEventListener("click", function () {
 // =========================
 
 const fadeImageButton =
-    document.querySelector("#fadeImageButton");
+    document.querySelector(
+        "#fadeImageButton"
+    );
 
 
-fadeImageButton.addEventListener("click", function () {
+fadeImageButton.addEventListener(
+    "click",
+    function () {
 
-    headerAnimalImage.classList.toggle("fade-image");
+        headerAnimalImage.classList.toggle(
+            "fade-image"
+        );
 
-});
+    }
+);
 
 
 // =========================
@@ -307,14 +449,19 @@ fadeImageButton.addEventListener("click", function () {
 // =========================
 
 const removeImageButton =
-    document.querySelector("#removeImageButton");
+    document.querySelector(
+        "#removeImageButton"
+    );
 
 
-removeImageButton.addEventListener("click", function () {
+removeImageButton.addEventListener(
+    "click",
+    function () {
 
-    headerAnimalImage.remove();
+        headerAnimalImage.remove();
 
-});
+    }
+);
 
 
 // =========================
@@ -325,12 +472,19 @@ const listItems =
     document.querySelectorAll("li");
 
 
-listItems.forEach(function (item) {
+listItems.forEach(
+    function (item) {
 
-    item.addEventListener("click", function () {
+        item.addEventListener(
+            "click",
+            function () {
 
-        item.classList.toggle("list-highlight");
+                item.classList.toggle(
+                    "list-highlight"
+                );
 
-    });
+            }
+        );
 
-});
+    }
+);

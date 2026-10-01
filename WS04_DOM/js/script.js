@@ -1,46 +1,55 @@
+// =========================
+// TASK 1
+// =========================
+
 const taskOneHeading = document.querySelector("#taskOneHeading");
+
 const changeHeadingButton = document.querySelector("#changeHeadingButton");
-const changeStyleButton = document.querySelector("#changeStyleButton");
-const changeTextButton = document.querySelector("#changeTextButton");
-const animalText = document.querySelector("#animalText");
 
 changeHeadingButton.addEventListener("click", function () {
-taskOneHeading.textContent = "Muokattu otsikko!";
+    taskOneHeading.textContent = "Muokattu otsikko!";
 });
+
+
+const changeStyleButton = document.querySelector("#changeStyleButton");
 
 changeStyleButton.addEventListener("click", function () {
-taskOneHeading.classList.toggle("highlight");
+    taskOneHeading.classList.toggle("highlight");
 });
+
+
+const changeTextButton = document.querySelector("#changeTextButton");
+
+const animalText = document.querySelector("#animalText");
 
 changeTextButton.addEventListener("click", function () {
-if (animalText.textContent === "Elefantit ovat maailman suurimpia maaeläimiä.") {
-animalText.textContent =
-"Tiikerit ovat suuria petoeläimiä, jotka elävät pääasiassa Aasiassa.";
-} else {
-animalText.textContent =
-"Elefantit ovat maailman suurimpia maaeläimiä.";
-}
+    animalText.textContent =
+        "Elefantti on suuri nisäkäs, joka elää Afrikassa ja Aasiassa.";
 });
+
+
+// Bonus: lisää lause tekstin loppuun
 
 animalText.addEventListener("dblclick", function () {
-if (!animalText.textContent.includes("Ne ovat erittäin älykkäitä eläimiä.")) {
-animalText.textContent +=
-" Ne ovat erittäin älykkäitä eläimiä.";
-}
+    animalText.textContent +=
+        " Elefantit ovat tunnettuja hyvästä muististaan.";
 });
 
+
+// Taulukon näyttäminen / piilottaminen
+
 const animalButton = document.querySelector("#animalButton");
+
 const animalTable = document.querySelector("#animalTable");
 
 animalButton.addEventListener("click", function () {
-animalTable.classList.toggle("hidden");
+    animalTable.classList.toggle("hidden");
 });
 
-const backgroundButton = document.querySelector("#backgroundButton");
 
-backgroundButton.addEventListener("click", function () {
-document.body.classList.toggle("dark-background");
-});
+// =========================
+// TASK 2
+// =========================
 
 const animalContent = document.querySelector("#animalContent");
 
@@ -50,188 +59,278 @@ animalHeading.classList.add("animal-heading");
 
 const animalParagraph = document.createElement("p");
 animalParagraph.textContent =
-"Pingviinit ovat lentokyvyttömiä merilintuja, jotka ovat erinomaisia uimareita.";
+    "Tämän päivän eläin on elefantti. Elefantti on maailman suurin maaeläin.";
 
-const animalCreatedImage = document.createElement("img");
-animalCreatedImage.src = "images/penguin.png";
-animalCreatedImage.alt = "Pingviini";
+const animalImage = document.createElement("img");
+animalImage.src = "images/elephant.png";
+animalImage.alt = "Elefantti";
 
 animalContent.append(
-animalHeading,
-animalParagraph,
-animalCreatedImage
+    animalHeading,
+    animalParagraph,
+    animalImage
 );
+
+
+// Piilota eläin
 
 const hideAnimalButton = document.querySelector("#hideAnimalButton");
 
 hideAnimalButton.addEventListener("click", function () {
-animalContent.style.display = "none";
+    animalContent.classList.add("hidden");
 });
+
+
+// Näytä eläin
 
 const showAnimalButton = document.querySelector("#showAnimalButton");
 
 showAnimalButton.addEventListener("click", function () {
-animalContent.style.display = "block";
+    animalContent.classList.remove("hidden");
 });
+
+
+// =========================
+// TASK 3
+// =========================
 
 const animalSelect = document.querySelector("#animalSelect");
+
 const animalName = document.querySelector("#animalName");
-const animalImage = document.querySelector("#animalImage");
+
+const animalImageElement = document.querySelector("#animalImage");
+
 const animalDescription = document.querySelector("#animalDescription");
 
+
 const animals = {
-elephant: {
-name: "Elefantti",
-image: "images/elephant.png",
-description: "Elefantit ovat maailman suurimpia maaeläimiä."
-},
+    elephant: {
+        name: "Elefantti",
+        image: "images/elephant.png",
+        description:
+            "Elefantti on maailman suurin maaeläin."
+    },
 
-```
-tiger: {
-    name: "Tiikeri",
-    image: "images/tiger.png",
-    description: "Tiikeri on suuri kissaeläin ja tehokas peto."
-},
+    tiger: {
+        name: "Tiikeri",
+        image: "images/tiger.png",
+        description:
+            "Tiikeri on suuri kissaeläin ja taitava metsästäjä."
+    },
 
-penguin: {
-    name: "Pingviini",
-    image: "images/penguin.png",
-    description: "Pingviinit ovat lentokyvyttömiä merilintuja."
-},
+    penguin: {
+        name: "Pingviini",
+        image: "images/penguin.png",
+        description:
+            "Pingviini on lentokyvytön lintu, joka viihtyy kylmissä ympäristöissä."
+    },
 
-panda: {
-    name: "Panda",
-    image: "images/panda.png",
-    description: "Panda tunnetaan erityisesti bambusta koostuvasta ruokavaliostaan."
-}
-```
-
+    panda: {
+        name: "Panda",
+        image: "images/panda.png",
+        description:
+            "Panda tunnetaan erityisesti bambun syömisestä."
+    }
 };
 
+
 animalSelect.addEventListener("change", function () {
-const selectedAnimal = animalSelect.value;
-const animal = animals[selectedAnimal];
+    const selectedAnimal = animalSelect.value;
 
-```
-animalName.textContent = animal.name;
-animalImage.src = animal.image;
-animalImage.alt = animal.name;
-animalDescription.textContent = animal.description;
-```
+    animalName.textContent = animals[selectedAnimal].name;
 
+    animalImageElement.src = animals[selectedAnimal].image;
+
+    animalImageElement.alt = animals[selectedAnimal].name;
+
+    animalDescription.textContent =
+        animals[selectedAnimal].description;
 });
 
-animalImage.addEventListener("mouseenter", function () {
-animalImage.classList.add("image-highlight");
+
+// Kuvan hover-efekti
+
+animalImageElement.addEventListener("mouseenter", function () {
+    animalImageElement.classList.add("image-highlight");
 });
 
-animalImage.addEventListener("mouseleave", function () {
-animalImage.classList.remove("image-highlight");
+animalImageElement.addEventListener("mouseleave", function () {
+    animalImageElement.classList.remove("image-highlight");
 });
+
+
+// =========================
+// TASK 4
+// =========================
 
 const animalForm = document.querySelector("#animalForm");
-const observationAnimal = document.querySelector("#observationAnimal");
-const observationLocation = document.querySelector("#observationLocation");
-const observationDate = document.querySelector("#observationDate");
-const observationTableBody = document.querySelector("#observationTableBody");
+
+const observationAnimal =
+    document.querySelector("#observationAnimal");
+
+const observationLocation =
+    document.querySelector("#observationLocation");
+
+const observationDate =
+    document.querySelector("#observationDate");
+
+const observationTableBody =
+    document.querySelector("#observationTableBody");
+
 
 animalForm.addEventListener("submit", function (event) {
-event.preventDefault();
 
-```
-const animalValue = observationAnimal.value.trim();
-const locationValue = observationLocation.value.trim();
-const dateValue = observationDate.value;
+    event.preventDefault();
 
-if (
-    animalValue === "" ||
-    locationValue === "" ||
-    dateValue === ""
-) {
-    alert("Täytä kaikki kentät.");
-    return;
-}
+    const animal = observationAnimal.value.trim();
 
-const newRow = document.createElement("tr");
+    const location = observationLocation.value.trim();
 
-const animalCell = document.createElement("td");
-animalCell.textContent = animalValue;
+    const date = observationDate.value;
 
-const locationCell = document.createElement("td");
-locationCell.textContent = locationValue;
+    if (
+        animal === "" ||
+        location === "" ||
+        date === ""
+    ) {
+        alert("Täytä kaikki kentät.");
+        return;
+    }
 
-const dateCell = document.createElement("td");
-dateCell.textContent = dateValue;
 
-const deleteCell = document.createElement("td");
+    const row = document.createElement("tr");
 
-const deleteButton = document.createElement("button");
-deleteButton.textContent = "Poista";
-deleteButton.classList.add("delete-button");
 
-deleteButton.addEventListener("click", function () {
-    newRow.remove();
-});
+    const animalCell = document.createElement("td");
+    animalCell.textContent = animal;
 
-deleteCell.append(deleteButton);
 
-newRow.append(
-    animalCell,
-    locationCell,
-    dateCell,
-    deleteCell
-);
+    const locationCell = document.createElement("td");
+    locationCell.textContent = location;
 
-observationTableBody.append(newRow);
 
-animalForm.reset();
-```
+    const dateCell = document.createElement("td");
+    dateCell.textContent = date;
+
+
+    row.append(
+        animalCell,
+        locationCell,
+        dateCell
+    );
+
+
+    observationTableBody.append(row);
+
+
+    animalForm.reset();
 
 });
 
-const deleteButtons = document.querySelectorAll(".delete-button");
+
+// =========================
+// BONUS: POISTA TAULUKON RIVI
+// =========================
+
+const deleteButtons =
+    document.querySelectorAll(".delete-button");
+
 
 deleteButtons.forEach(function (button) {
-button.addEventListener("click", function () {
-const row = button.closest("tr");
-row.remove();
-});
+
+    button.addEventListener("click", function () {
+
+        const row = button.closest("tr");
+
+        row.remove();
+
+    });
+
 });
 
-const headerAnimalImage = document.querySelector("#headerAnimalImage");
 
-const moveImageButton = document.querySelector("#moveImageButton");
+// =========================
+// BONUS: LIIKUTA KUVA
+// =========================
+
+const headerAnimalImage =
+    document.querySelector("#headerAnimalImage");
+
+
+const moveImageButton =
+    document.querySelector("#moveImageButton");
+
 
 moveImageButton.addEventListener("click", function () {
-headerAnimalImage.classList.toggle("move-image");
+
+    headerAnimalImage.classList.toggle("move-image");
+
 });
 
-const animateImageButton = document.querySelector("#animateImageButton");
+
+// =========================
+// BONUS: ANIMOI KUVA
+// =========================
+
+const animateImageButton =
+    document.querySelector("#animateImageButton");
+
 
 animateImageButton.addEventListener("click", function () {
-headerAnimalImage.classList.remove("animate-image");
-void headerAnimalImage.offsetWidth;
-headerAnimalImage.classList.add("animate-image");
+
+    headerAnimalImage.classList.remove("animate-image");
+
+    void headerAnimalImage.offsetWidth;
+
+    headerAnimalImage.classList.add("animate-image");
+
 });
 
-const fadeImageButton = document.querySelector("#fadeImageButton");
+
+// =========================
+// BONUS: HÄIVYTÄ KUVA
+// =========================
+
+const fadeImageButton =
+    document.querySelector("#fadeImageButton");
+
 
 fadeImageButton.addEventListener("click", function () {
-headerAnimalImage.classList.toggle("fade-image");
+
+    headerAnimalImage.classList.toggle("fade-image");
+
 });
 
-const removeImageButton = document.querySelector("#removeImageButton");
+
+// =========================
+// BONUS: POISTA KUVA
+// =========================
+
+const removeImageButton =
+    document.querySelector("#removeImageButton");
+
 
 removeImageButton.addEventListener("click", function () {
-if (headerAnimalImage) {
-headerAnimalImage.remove();
-}
+
+    headerAnimalImage.remove();
+
 });
 
-const allListItems = document.querySelectorAll("li");
 
-allListItems.forEach(function (item) {
-item.addEventListener("click", function () {
-item.classList.toggle("list-highlight");
-});
+// =========================
+// BONUS: LI-LISTAN KÄSITTELY
+// =========================
+
+const listItems =
+    document.querySelectorAll("li");
+
+
+listItems.forEach(function (item) {
+
+    item.addEventListener("click", function () {
+
+        item.classList.toggle("list-highlight");
+
+    });
+
 });

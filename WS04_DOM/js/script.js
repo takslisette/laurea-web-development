@@ -1,6 +1,3 @@
-// =========================
-// TASK 1
-// =========================
 
 const taskOneHeading = document.querySelector("#taskOneHeading");
 
@@ -28,7 +25,6 @@ changeTextButton.addEventListener("click", function () {
 });
 
 
-// Bonus: lisää lause tekstin loppuun
 
 animalText.addEventListener("dblclick", function () {
     animalText.textContent +=
@@ -36,7 +32,6 @@ animalText.addEventListener("dblclick", function () {
 });
 
 
-// Taulukon näyttäminen / piilottaminen
 
 const animalButton = document.querySelector("#animalButton");
 
@@ -47,7 +42,6 @@ animalButton.addEventListener("click", function () {
 });
 
 
-// Vaihda koko sivun taustaväri
 
 const backgroundButton =
     document.querySelector("#backgroundButton");
@@ -57,9 +51,6 @@ backgroundButton.addEventListener("click", function () {
 });
 
 
-// =========================
-// TASK 2
-// =========================
 
 const animalContent =
     document.querySelector("#animalContent");
@@ -94,7 +85,6 @@ animalContent.append(
 );
 
 
-// Piilota eläin
 
 const hideAnimalButton =
     document.querySelector("#hideAnimalButton");
@@ -104,7 +94,6 @@ hideAnimalButton.addEventListener("click", function () {
 });
 
 
-// Näytä eläin
 
 const showAnimalButton =
     document.querySelector("#showAnimalButton");
@@ -114,9 +103,6 @@ showAnimalButton.addEventListener("click", function () {
 });
 
 
-// =========================
-// TASK 3
-// =========================
 
 const animalSelect =
     document.querySelector("#animalSelect");
@@ -182,7 +168,6 @@ animalSelect.addEventListener("change", function () {
 });
 
 
-// Kuvan hover-efekti
 
 animalImageElement.addEventListener(
     "mouseenter",
@@ -205,10 +190,6 @@ animalImageElement.addEventListener(
     }
 );
 
-
-// =========================
-// TASK 4
-// =========================
 
 const animalForm =
     document.querySelector("#animalForm");
@@ -253,13 +234,11 @@ animalForm.addEventListener(
         }
 
 
-        // Luo uusi rivi
 
         const row =
             document.createElement("tr");
 
 
-        // Eläin
 
         const animalCell =
             document.createElement("td");
@@ -268,7 +247,6 @@ animalForm.addEventListener(
             animal;
 
 
-        // Havaintopaikka
 
         const locationCell =
             document.createElement("td");
@@ -277,7 +255,7 @@ animalForm.addEventListener(
             location;
 
 
-        // Päivämäärä
+        
 
         const dateCell =
             document.createElement("td");
@@ -286,7 +264,7 @@ animalForm.addEventListener(
             date;
 
 
-        // Toiminto
+        
 
         const actionCell =
             document.createElement("td");
@@ -314,7 +292,7 @@ animalForm.addEventListener(
         actionCell.append(deleteButton);
 
 
-        // Lisää kaikki solut riville
+     
 
         row.append(
             animalCell,
@@ -324,12 +302,12 @@ animalForm.addEventListener(
         );
 
 
-        // Lisää rivi taulukkoon
+    
 
         observationTableBody.append(row);
 
 
-        // Tyhjennä lomake
+        
 
         animalForm.reset();
 
@@ -337,9 +315,7 @@ animalForm.addEventListener(
 );
 
 
-// =========================
-// BONUS: POISTA TAULUKON RIVI
-// =========================
+
 
 const deleteButtons =
     document.querySelectorAll(
@@ -366,9 +342,7 @@ deleteButtons.forEach(
 );
 
 
-// =========================
-// BONUS: LIIKUTA KUVA
-// =========================
+
 
 const headerAnimalImage =
     document.querySelector(
@@ -394,9 +368,7 @@ moveImageButton.addEventListener(
 );
 
 
-// =========================
-// BONUS: ANIMOI KUVA
-// =========================
+
 
 const animateImageButton =
     document.querySelector(
@@ -422,9 +394,7 @@ animateImageButton.addEventListener(
 );
 
 
-// =========================
-// BONUS: HÄIVYTÄ KUVA
-// =========================
+
 
 const fadeImageButton =
     document.querySelector(
@@ -444,7 +414,6 @@ fadeImageButton.addEventListener(
 );
 
 
-// =========================
 // BONUS: POISTA KUVA
 // =========================
 
@@ -464,9 +433,7 @@ removeImageButton.addEventListener(
 );
 
 
-// =========================
-// BONUS: LI-LISTAN KÄSITTELY
-// =========================
+
 
 const listItems =
     document.querySelectorAll("li");

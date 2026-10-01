@@ -1,58 +1,192 @@
-<!-- TEHTÄVÄ 2 -->
+<!DOCTYPE html>
+
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop 04 – Eläimet ja DOM</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <h1 id="mainHeading">Workshop 04 – Eläimet ja DOM</h1>
+
+```
+<p>Tässä työpajassa harjoittelet HTML-elementtien valitsemista, tapahtumien kuuntelemista ja DOM-rakenteen muuttamista.</p>
+
+<p><strong>Valitse → Kuuntele → Muuta DOMia</strong></p>
+
+<button id="animalButton">Näytä/Piilota Taulukko</button>
+<button id="backgroundButton">Vaihda taustaväri</button>
+
+<table id="animalTable">
+    <thead>
+        <tr>
+            <th>
+                <img id="headerAnimalImage" src="images/elephant.png" alt="Elefantti">
+            </th>
+            <th>Elefantit ovat maailman suurimpia maaeläimiä</th>
+        </tr>
+    </thead>
+</table>
+```
+
+</header>
+
+<main>
+
+<section>
+    <h2 id="taskOneHeading">Tehtävä 1: Sisällön muuttaminen</h2>
+
+```
+<div class="buttons">
+    <button id="changeHeadingButton">Muuta otsikko</button>
+    <button id="changeStyleButton">Muuta tyyliä</button>
+    <button id="changeTextButton">Muuta eläinteksti</button>
+</div>
+
+<p id="animalText">
+    Elefantit ovat maailman suurimpia maaeläimiä.
+</p>
+
+<h3>Bonustehtävät</h3>
+<ul>
+    <li>Lisää eläintekstin loppuun uusi lause.</li>
+    <li>Vaihda koko sivun taustaväriä.</li>
+</ul>
+```
+
+</section>
+
+<hr>
+
 <section>
     <h2>Tehtävä 2: Elementtien luominen JavaScriptillä</h2>
 
-    <p>
-        Luo tämän tehtävän elementit JavaScriptillä. Älä lisää niitä
-        suoraan HTML-koodiin.
+```
+<div id="animalContent"></div>
+
+<div class="buttons">
+    <button id="hideAnimalButton">Piilota eläin</button>
+    <button id="showAnimalButton">Näytä eläin</button>
+</div>
+```
+
+</section>
+
+<hr>
+
+<section>
+    <h2>Tehtävä 3: Eläimen valitseminen</h2>
+
+```
+<label for="animalSelect">Valitse eläin:</label>
+
+<select id="animalSelect">
+    <option value="elephant">Elefantti</option>
+    <option value="tiger">Tiikeri</option>
+    <option value="penguin">Pingviini</option>
+    <option value="panda">Panda</option>
+</select>
+
+<article id="selectedAnimal">
+    <h3 id="animalName">Elefantti</h3>
+
+    <img
+        id="animalImage"
+        src="images/elephant.png"
+        alt="Elefantti"
+    >
+
+    <p id="animalDescription">
+        Elefantit ovat maailman suurimpia maaeläimiä.
     </p>
+</article>
+```
 
-    <ol>
-        <li>
-            Valitse alla oleva elementti, jonka tunniste on
-            <code>animalContent</code>.
-        </li>
+</section>
 
-        <li>
-            Luo <code>h3</code>-elementti, jossa lukee
-            <strong>Päivän eläin</strong>.
-        </li>
+<hr>
 
-        <li>
-            Luo tekstikappale, jossa kerrotaan valitsemastasi eläimestä.
-        </li>
+<section>
+    <h2>Tehtävä 4: Eläinhavaintojen lisääminen</h2>
 
-        <li>
-            Luo <code>img</code>-elementti ja määritä sille
-            <code>src</code>- ja <code>alt</code>-arvot.
-        </li>
+```
+<form id="animalForm">
 
-        <li>
-            Liitä luomasi elementit sivulle
-            <code>append()</code>-metodilla.
-        </li>
-
-        <li>
-            Lisää luodulle otsikolle CSS-luokka
-            <code>animal-heading</code>.
-        </li>
-    </ol>
-
-    <div id="animalContent"></div>
-
-    <div class="buttons">
-        <button id="hideAnimalButton">
-            Piilota eläin
-        </button>
-
-        <button id="showAnimalButton">
-            Näytä eläin
-        </button>
+    <div>
+        <label for="observationAnimal">Eläin:</label>
+        <input type="text" id="observationAnimal">
     </div>
 
-    <p>
-        Lisää painikkeisiin tapahtumankuuntelijat. Ensimmäinen painike
-        piilottaa <code>animalContent</code>-elementin ja toinen näyttää
-        sen uudelleen.
-    </p>
+    <div>
+        <label for="observationLocation">Havaintopaikka:</label>
+        <input type="text" id="observationLocation">
+    </div>
+
+    <div>
+        <label for="observationDate">Päivämäärä:</label>
+        <input type="date" id="observationDate">
+    </div>
+
+    <button type="submit">Lisää havainto</button>
+
+</form>
+
+<table id="observationTable">
+    <thead>
+        <tr>
+            <th>Eläin</th>
+            <th>Havaintopaikka</th>
+            <th>Päivämäärä</th>
+            <th>Toiminto</th>
+        </tr>
+    </thead>
+
+    <tbody id="observationTableBody">
+        <tr>
+            <td>Orava</td>
+            <td>Puisto</td>
+            <td>15.9.2026</td>
+            <td>
+                <button class="delete-button">Poista</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Jänis</td>
+            <td>Metsä</td>
+            <td>18.9.2026</td>
+            <td>
+                <button class="delete-button">Poista</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+```
+
 </section>
+
+<hr>
+
+<section>
+    <h2>Bonustehtävät</h2>
+
+```
+<div class="buttons">
+    <button id="moveImageButton">Siirrä kuvaa</button>
+    <button id="animateImageButton">Animoi kuva</button>
+    <button id="fadeImageButton">Häivytä kuva</button>
+    <button id="removeImageButton">Poista kuva</button>
+</div>
+```
+
+</section>
+
+</main>
+
+</body>
+</html>

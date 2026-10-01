@@ -1,4 +1,273 @@
+* {
+  box-sizing: border-box;
+  }
+
+body {
+margin: 0;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+background-color: #f4f4f4;
+color: #222;
+line-height: 1.6;
+transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+header,
+main {
+max-width: 1000px;
+margin: 0 auto;
+padding: 25px;
+}
+
+header {
+text-align: center;
+}
+
+section {
+background-color: white;
+margin: 30px 0;
+padding: 25px;
+border-radius: 12px;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+margin-bottom: 10px;
+}
+
+h2 {
+margin-top: 0;
+}
+
+button {
+padding: 10px 16px;
+margin: 5px;
+border: none;
+border-radius: 6px;
+background-color: #333;
+color: white;
+cursor: pointer;
+transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+transform: translateY(-2px);
+background-color: #555;
+}
+
+.buttons {
+margin: 20px 0;
+display: flex;
+flex-wrap: wrap;
+gap: 5px;
+}
+
 .highlight {
-    background-color: yellow;
-    color: red;
+background-color: yellow;
+padding: 10px;
+border-radius: 6px;
+color: #111;
+}
+
+.hidden {
+display: none;
+}
+
+table {
+width: 100%;
+margin: 20px 0;
+border-collapse: collapse;
+background-color: white;
+}
+
+th,
+td {
+padding: 12px;
+border: 1px solid #ccc;
+text-align: left;
+}
+
+th {
+background-color: #e8e8e8;
+}
+
+tbody tr:nth-child(even) {
+background-color: #f7f7f7;
+}
+
+.delete-button {
+background-color: #a33;
+}
+
+.delete-button:hover {
+background-color: #c44;
+}
+
+#animalContent {
+margin-top: 20px;
+padding: 20px;
+border: 2px solid #ddd;
+border-radius: 10px;
+text-align: center;
+}
+
+.animal-heading {
+font-size: 1.6rem;
+}
+
+#animalContent img {
+width: 220px;
+max-width: 100%;
+border-radius: 10px;
+}
+
+select,
+input {
+padding: 9px;
+margin: 5px 0 15px;
+border: 1px solid #aaa;
+border-radius: 5px;
+font-size: 1rem;
+}
+
+#selectedAnimal {
+margin-top: 25px;
+padding: 20px;
+text-align: center;
+border-radius: 10px;
+background-color: #f5f5f5;
+}
+
+#animalImage {
+width: 300px;
+max-width: 100%;
+border-radius: 10px;
+transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+}
+
+.image-highlight {
+transform: scale(1.08);
+box-shadow: 0 0 20px rgba(255, 180, 0, 0.8);
+}
+
+#animalForm {
+padding: 20px;
+margin: 20px 0;
+background-color: #f1f1f1;
+border-radius: 10px;
+}
+
+#animalForm div {
+display: flex;
+flex-direction: column;
+max-width: 400px;
+}
+
+#animalForm label {
+font-weight: bold;
+margin-top: 10px;
+}
+
+.move-image {
+transform: translateX(100px);
+}
+
+.animate-image {
+animation: animalMove 1.5s ease-in-out;
+}
+
+@keyframes animalMove {
+0% {
+transform: translateX(0) rotate(0deg);
+}
+
+```
+25% {
+    transform: translateX(50px) rotate(5deg);
+}
+
+50% {
+    transform: translateX(100px) rotate(-5deg);
+}
+
+75% {
+    transform: translateX(50px) rotate(5deg);
+}
+
+100% {
+    transform: translateX(0) rotate(0deg);
+}
+```
+
+}
+
+.fade-image {
+opacity: 0.15;
+}
+
+.list-highlight {
+background-color: #fff3a3;
+padding: 4px;
+border-radius: 4px;
+}
+
+.dark-background {
+background-color: #222;
+color: #eee;
+}
+
+.dark-background section {
+background-color: #333;
+color: #eee;
+}
+
+.dark-background table {
+background-color: #333;
+color: #eee;
+}
+
+.dark-background th {
+background-color: #444;
+}
+
+.dark-background td {
+border-color: #666;
+}
+
+hr {
+border: 0;
+border-top: 1px solid #ccc;
+margin: 40px 0;
+}
+
+@media (max-width: 600px) {
+header,
+main {
+padding: 15px;
+}
+
+```
+section {
+    padding: 18px;
+}
+
+.buttons {
+    flex-direction: column;
+}
+
+button {
+    width: 100%;
+    margin: 4px 0;
+}
+
+table {
+    font-size: 0.9rem;
+}
+
+th,
+td {
+    padding: 8px;
+}
+```
+
 }
